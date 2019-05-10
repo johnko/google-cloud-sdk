@@ -56,7 +56,7 @@ class IdentityToken(base.Command):
     cred = c_store.Load()
     if args.force_auth_refresh:
       c_store.Refresh(cred)
-    if not cred.id_token64:
+    if not cred.id_tokenb64:
       raise auth_exceptions.InvalidIdentityTokenError(
           'No identity token can be obtained from the current credentials.')
     return cred.id_tokenb64
